@@ -2,7 +2,8 @@ name: Deploy Docusaurus to GitHub Pages
 
 on:
   push:
-    branches: [$default-branch]
+    branches:
+      - production
 
 permissions:
   contents: read
