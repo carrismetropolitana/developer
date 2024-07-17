@@ -16,9 +16,9 @@ const config: Config = {
 	tagline: 'Network and real-time data for the Carris Metropolitana operation.',
 
 	organizationName: 'carrismetropolitana',
-	projectName: 'docs',
+	projectName: 'developer',
 
-	url: 'https://your-docusaurus-site.example.com',
+	url: 'https://developer.carrismetropolitana.pt',
 
 	baseUrl: '/',
 
