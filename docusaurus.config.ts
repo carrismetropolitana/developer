@@ -1,29 +1,46 @@
+/* eslint-disable perfectionist/sort-objects */
+
+/* * */
+
 import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
 
 import { themes as prismThemes } from 'prism-react-renderer';
 
+/* * */
+
 const config: Config = {
-	baseUrl: '/',
+
 	favicon: 'img/favicon.ico',
+	title: 'Carris Metropolitana Developer Portal',
+	tagline: 'Network and real-time data for the Carris Metropolitana operation.',
+
+	organizationName: 'carrismetropolitana',
+	projectName: 'docs',
+
+	url: 'https://your-docusaurus-site.example.com',
+
+	baseUrl: '/',
+
 	i18n: {
 		defaultLocale: 'en',
 		locales: ['en'],
 	},
+
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'warn',
-	organizationName: 'carrismetropolitana',
+
 	presets: [
 		[
 			'classic',
 			{
 				blog: {
-					editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
 					showReadingTime: true,
+					editUrl: 'https://github.com/carrismetropolitana/developer/tree/production/',
 				},
 				docs: {
-					editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
 					sidebarPath: './sidebars.ts',
+					editUrl: 'https://github.com/carrismetropolitana/developer/tree/production/',
 				},
 				theme: {
 					customCss: './src/css/custom.css',
@@ -31,91 +48,86 @@ const config: Config = {
 			} satisfies Preset.Options,
 		],
 	],
-	projectName: 'docs',
-	tagline: 'Network and real-time data for the Carris Metropolitana operation.',
+
 	themeConfig: {
+
 		colorMode: {
 			defaultMode: 'light',
-			respectPrefersColorScheme: false,
+			respectPrefersColorScheme: true,
 		},
-		footer: {
-			copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-			links: [
-				{
-					items: [
-						{
-							label: 'Tutorial',
-							to: '/docs/intro',
-						},
-					],
-					title: 'Docs',
-				},
-				{
-					items: [
-						{
-							href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-							label: 'Stack Overflow',
-						},
-						{
-							href: 'https://discordapp.com/invite/docusaurus',
-							label: 'Discord',
-						},
-						{
-							href: 'https://twitter.com/docusaurus',
-							label: 'Twitter',
-						},
-					],
-					title: 'Community',
-				},
-				{
-					items: [
-						{
-							label: 'Blog',
-							to: '/blog',
-						},
-						{
-							href: 'https://github.com/facebook/docusaurus',
-							label: 'GitHub',
-						},
-					],
-					title: 'More',
-				},
-			],
-			style: 'dark',
-		},
-		// Replace with your project's social card
+
 		image: 'img/docusaurus-social-card.jpg',
+
 		navbar: {
+			// title: 'Developer Portal',
+			logo: {
+				alt: 'Site Logo',
+				src: 'img/logo-light.svg',
+				srcDark: 'img/logo-dark.svg',
+				height: 40,
+			},
 			items: [
 				{
-					label: 'Tutorial',
+					label: 'GTFS Reference',
 					position: 'left',
-					sidebarId: 'tutorialSidebar',
+					sidebarId: 'gtfsSidebar',
 					type: 'docSidebar',
 				},
-				{ label: 'Blog', position: 'left', to: '/blog' },
 				{
-					href: 'https://github.com/facebook/docusaurus',
+					label: 'REST API Reference',
+					position: 'left',
+					sidebarId: 'apiSidebar',
+					type: 'docSidebar',
+				},
+				{
+					label: 'Blog',
+					position: 'left',
+					to: '/blog',
+				},
+				{
 					label: 'GitHub',
 					position: 'right',
+					href: 'https://github.com/carrismetropolitana',
 				},
 			],
-			logo: {
-				alt: 'My Site Logo',
-				src: 'img/logo.svg',
-			},
-			title: 'My Site',
 		},
+
+		footer: {
+			style: 'light',
+			links: [
+				{
+					title: 'Documentation',
+					items: [
+						{ label: 'GTFS', to: '/docs/gtfs' },
+						{ label: 'API', to: '/docs/api' },
+					],
+				},
+				{
+					title: 'Community',
+					items: [
+						{ label: 'Blog', to: '/blog' },
+						{ label: 'Github', href: 'https://github.com/carrismetropolitana' },
+						{ label: 'Mobility Database', href: 'https://github.com/MobilityData/mobility-database-catalogs' },
+					],
+				},
+				{
+					title: 'More',
+					items: [
+						{ label: 'NAP-PT', href: 'https://www.nap-portugal.imt-ip.pt/nap/multimodalsupplydetail/159' },
+						{ label: 'Support', href: 'https://www.carrismetropolitana.pt/apoio/' },
+					],
+				},
+			],
+		},
+
 		prism: {
-			darkTheme: prismThemes.dracula,
 			theme: prismThemes.github,
 		},
+
 	} satisfies Preset.ThemeConfig,
 
-	title: 'CMetropolitana API Docs',
-
-	// Set the production url of your site here
-	url: 'https://your-docusaurus-site.example.com',
 };
+
+/* * */
 
 export default config;
