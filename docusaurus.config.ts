@@ -71,16 +71,20 @@ const config: Config = {
 					label: 'GTFS Reference',
 					position: 'left',
 					sidebarId: 'gtfsSidebar',
-					type: 'docSidebar',
+
 				},
 				{
 					label: 'REST API Reference',
 					position: 'left',
 					sidebarId: 'apiSidebar',
-					type: 'docSidebar',
 				},
 				{
-					label: 'Blog',
+					label: 'Cool Projects',
+					position: 'left',
+					sidebarId: 'projectsSidebar',
+				},
+				{
+					label: 'Announcements',
 					position: 'left',
 					to: '/blog',
 				},
