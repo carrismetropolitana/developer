@@ -12,22 +12,28 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 export const baseOptions: BaseLayoutProps = {
 	links: [
 		{
-			active: 'nested-url',
+			active: 'url',
 			text: 'REST API',
 			url: '/rest-api',
 		},
 		{
-			active: 'nested-url',
+			active: 'url',
 			text: 'GTFS Schedule',
 			url: '/gtfs-schedule',
 		},
 		{
-			active: 'nested-url',
+			active: 'url',
 			text: 'GTFS Realtime',
 			url: '/gtfs-realtime',
+		},
+		{
+			active: 'url',
+			text: 'Datasets',
+			url: '/datasets',
 		},
 	],
 	nav: {
 		title: 'CM Docs',
+		transparentMode: 'always',
 	},
 };

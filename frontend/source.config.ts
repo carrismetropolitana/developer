@@ -27,3 +27,9 @@ export const gtfsRealtimeSource = defineCollections({
 	schema: frontmatterSchema,
 	type: 'doc',
 });
+
+export const datasetsSource = defineCollections({
+	dir: 'content/datasets',
+	schema: frontmatterSchema,
+	type: 'doc',
+});
