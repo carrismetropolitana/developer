@@ -8,35 +8,20 @@ FROM node:22.6-alpine3.20 AS base
 # PHASE 1
 # Install dependencies only when needed.
 
-FROM base AS dependencies
+FROM base AS builder
 
 RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
-COPY package.json ./
-
-RUN npm install --omit-dev --force \
-    && npm cache clean --force
-
-
-# # # # # # # # #
-
-
-# PHASE 2
-# Rebuild the source code only when needed.
-
-FROM base AS builder
-
-WORKDIR /app
-
-COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
+
+RUN npm install --omit-dev \
+    && npm cache clean --force
 
 RUN npx @helperkits/bumper bump
 
 RUN npm run build
-
 
 # # # # # # # # #
 
