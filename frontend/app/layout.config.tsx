@@ -1,3 +1,5 @@
+/* * */
+
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 
 /**
@@ -11,18 +13,18 @@ export const baseOptions: BaseLayoutProps = {
 	links: [
 		{
 			active: 'nested-url',
-			text: 'API Docs',
-			url: '/api-docs',
+			text: 'REST API',
+			url: '/rest-api',
 		},
 		{
 			active: 'nested-url',
-			text: 'GTFS Static',
-			url: '/gtfs-static',
+			text: 'GTFS Schedule',
+			url: '/gtfs-schedule',
 		},
 		{
 			active: 'nested-url',
 			text: 'GTFS Realtime',
-			url: '/gtfs-rt',
+			url: '/gtfs-realtime',
 		},
 	],
 	nav: {

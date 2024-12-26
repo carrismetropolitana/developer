@@ -5,6 +5,8 @@
 	"scripts": {
 		"build": "next build",
 		"dev": "next dev",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
 		"postinstall": "fumadocs-mdx",
 		"start": "next start"
 	},
@@ -17,6 +19,7 @@
 		"react-dom": "19.0.0"
 	},
 	"devDependencies": {
+		"@carrismetropolitana/eslint": "20241024.1600.5",
 		"@types/mdx": "2.0.13",
 		"@types/node": "22.10.2",
 		"@types/react": "19.0.2",
