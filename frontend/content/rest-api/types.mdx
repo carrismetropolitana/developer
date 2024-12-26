@@ -1,69 +1,49 @@
 ---
 title: Types
-description: Discover how you can use the API to build realtime apps with Carris Metropolitana.
+description: Common response structure and NPM package.
 ---
 
-### Commitment to Open data
+### Response Structure
 
-Carris Metropolitana is deeply commited to open data. Most, if not all, of the code produced internally is published on Github. We welcome comments and PRs.
-Carris Metropolitana also regularly shares metrics about its operation. This includes big numbers (eg. transported passengers) and detailed data about the quality of service for each line.
-Many of these numbers are provided in the API so that they can be consumed in realtime. All our public facing apps (website, native) consume the same endpoints provided to the public,
-as this ensures everyone has access to the same up-to-date information while also simplifying our tech stack.
+All responses (should) follow the same basic structure, based on the [JSend](https://github.com/omniti-labs/jsend) specification.
+This allows us to provide additional debug information for each endpoint, if needed, and standardizes the responses.
+Also, in case of errors, there is a structured way of explaining what is wrong and how it might be fixed.
 
+```json title="Success Response"
+{
+	status: "success",
+	resource_timestamp: 1721023200,
+	server_timestamp: 1721041200,
+	data: [] or {} // The requested data
+}
+```
 
-### What this API is and what it is not
+```json title="Error Response"
+{
+	status: "error",
+	server_timestamp: 1721041200,
+	message: "Unable to communicate with database"
+}
+```
 
-**Carris Metropolitana** and **Carris (municipal)** are two separate entities. Carris (municipal) operates exclusively within Lisbon city boundaries, while Carris Metropolitana operates in 15 of the 18 municipalities of the Lisbon metropolitan area.
-This API provides scheduled and realtime data for Carris Metropolitana. If you are looking for a particular operators data please look at the following table:
+### What are the timestamps for?
 
-| City / Municipality | Bus Operator                                                            |
-|:-------------------:|:-----------------------------------------------------------------------:|
-| Alcochete           | Carris Metropolitana                                                    |
-| Alcochete           | Carris Metropolitana                                                    |
-| Almada              | Carris Metropolitana                                                    |
-| Amadora             | Carris Metropolitana                                                    |
-| Barreiro            | [TCB](https://www.tcbarreiro.pt/)                                       |
-| Cascais             | [MobiCascais](https://dadosabertos.cascais.pt/dataset/gtfs-mobicascais) |
-| Lisboa              | [Carris (municipal)](https://gateway.carris.pt/apiui)                   |
-| Loures              | Carris Metropolitana                                                    |
-| Mafra               | Carris Metropolitana                                                    |
-| Moita               | Carris Metropolitana                                                    |
-| Montijo             | Carris Metropolitana                                                    |
-| Odivelas            | Carris Metropolitana                                                    |
-| Oeiras              | Carris Metropolitana                                                    |
-| Palmela             | Carris Metropolitana                                                    |
-| Seixal              | Carris Metropolitana                                                    |
-| Sesimbra            | Carris Metropolitana                                                    |
-| Setúbal             | Carris Metropolitana                                                    |
-| Sintra              | Carris Metropolitana                                                    |
-| Vila Franca de Xira | Carris Metropolitana                                                    |
+To answer this, it is necessary to explain a little bit about how the API works behind the scenes.
+The API is composed of several modules that fetch, parse and store data from multiple sources. For example, the data source for stops and lines is the GTFS; For service alerts we use an internal database; For stores occupancy we periodicaly call a commercial service API.
+If we were to perform this actions everytime someone fetched an endpoint, either it would take a long time to answer or we would flood other services with requests, bringing them down.
 
+To overcome this scenario we decouple the _serving responses_ part from the _fetching and parsing data_ part. Data is periodicaly fetched, parsed and stored in a cache database (redis).
+As such, `resource_timestamp` represents when this step occurred.
 
-### Versions
+After storing it in Redis, data is served thousands of times to thousands of clients. We agressively employ several layers of cache to ensure very fast response times
+and always-on service, even during outages. `server_timestamp` represents when the server first fetched the data from the database and sent it to the client, just before
+it was cached by the next layers in the chain (nginx and Cloudflare).
 
-The API is versioned. We might need to perform breaking changes to the way endpoints behave in order to support new features; we will always bump the API version to avoid dirupting existing uses.
-Since this is JSON API, for any new property added to any endpoint, we might or might not bump the API version. This is because we do not consider these as breaking changes,
-as these new properties can be safely ignored by API consumers.
+These timestamps allows for the API consumers to understand when the response data was processed and when it entered cache.
 
 
-### Collections
+### NPM package
 
-This API is organized into collections (eg. `network` or `metrics`). All JSON endpoints of all collections follow the same basic structure. Available collections are:
+We provide an NPM package to tipify all the API responses in javascript clients. We plan to expand this package with more functionality in the future. Pull Requests are welcomed!
+Please find the package here: https://www.npmjs.com/package/@carrismetropolitana/api-types
 
-| Collection                      | Description                                                                                                                                                                  |
-|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [network](/rest-api/network)    | All network-related endpoints. These include stops, lines, routes, patterns, shapes, vehicles, GTFS, etc.                                                                    |
-| [facilities](/rest-api/network) | Facilities are places in amL that Carris Metropolitana serves. These include schools, hospitals, etc. Each facility type has its own endpoint.                               |
-| [locations](/rest-api/network)  | Locations are administrative divisions of amL. Districts, Municipalities, Parishes and Localities. These are used to identify the location of network points and facilities. |
-| [metrics](/rest-api/network)    | Realtime metrics from the Carris Metropolitana operation.                                                                                                                    |
-
-
-## What is Next?
-
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.vercel.app" />
-</Cards>
-
-
-###
