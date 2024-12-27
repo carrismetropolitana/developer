@@ -18,7 +18,9 @@ export default function Layout({ children }: { children: ReactNode }) {
 	return (
 		<html className={inter.className} lang="en" suppressHydrationWarning>
 			<body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-				<RootProvider>{children}</RootProvider>
+				<RootProvider search={{ options: { type: 'static' } }}>
+					{children}
+				</RootProvider>
 			</body>
 		</html>
 	);
