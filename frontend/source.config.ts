@@ -1,35 +1,7 @@
-/* * */
+import { defineDocs, defineConfig } from 'fumadocs-mdx/config';
 
-import { defineCollections, frontmatterSchema, metaSchema } from 'fumadocs-mdx/config';
-
-/* * */
-
-export const meta = defineCollections({
-	dir: 'content/meta',
-	schema: metaSchema,
-	type: 'meta',
+export const { docs, meta } = defineDocs({
+  dir: 'content/docs',
 });
 
-export const restApiSource = defineCollections({
-	dir: 'content/rest-api',
-	schema: frontmatterSchema,
-	type: 'doc',
-});
-
-export const gtfsScheduleSource = defineCollections({
-	dir: 'content/gtfs-schedule',
-	schema: frontmatterSchema,
-	type: 'doc',
-});
-
-export const gtfsRealtimeSource = defineCollections({
-	dir: 'content/gtfs-realtime',
-	schema: frontmatterSchema,
-	type: 'doc',
-});
-
-export const datasetsSource = defineCollections({
-	dir: 'content/datasets',
-	schema: frontmatterSchema,
-	type: 'doc',
-});
+export default defineConfig();

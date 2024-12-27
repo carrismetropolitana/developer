@@ -11,6 +11,7 @@
 		"start": "next start"
 	},
 	"dependencies": {
+		"@tabler/icons-react": "^3.26.0",
 		"fumadocs-core": "14.6.4",
 		"fumadocs-mdx": "11.2.1",
 		"fumadocs-ui": "14.6.4",
