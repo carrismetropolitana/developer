@@ -1,4 +1,8 @@
+/* * */
+
 import { CSSProperties } from 'react';
+
+/* * */
 
 export default function CMDarkLogo({ style }: { style?: CSSProperties }) {
 	return (

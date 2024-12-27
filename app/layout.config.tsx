@@ -1,3 +1,5 @@
+/* * */
+
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 
 import CMDarkLogo from '@/components/brand/CMDarkLogo';
@@ -28,10 +30,7 @@ export const baseOptions: BaseLayoutProps = {
 	],
 	nav: {
 		title: (
-			<CMDarkLogo style={{
-				height: '2.5rem',
-			}}
-			/>
+			<CMDarkLogo style={{ height: '2.5rem' }} />
 		),
 	},
 };
