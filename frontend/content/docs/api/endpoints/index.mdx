@@ -1,0 +1,21 @@
+---
+title: Endpoints
+description: Explore all of the available endpoints in our API.
+---
+
+import { IconRoute, IconBuildings, IconMapPin, IconChartBar } from '@tabler/icons-react';
+
+<Cards>
+    <Card icon={<IconBuildings />} title="/facilities" href="/docs/api/endpoints/facilities">
+        All things facilities. Realtime store status and facilities you can reach via our network.
+    </Card>
+    <Card icon={<IconMapPin />} title="/locations" href="/docs/api/endpoints/locations">
+        Locations divided by organizational units we bound our service to. Municipalities, parishes, and more.
+    </Card>
+    <Card icon={<IconChartBar />} title="/metrics" href="/docs/api/endpoints/metrics">
+        Our personal favorite. Historic and realtime metrics. Ridership, punctuality, network performance and more.
+    </Card>
+    <Card icon={<IconRoute />} title="/network" href="/docs/api/endpoints/network">
+        Bus network information. Routes, stops, schedules, realtime data and more.
+    </Card>
+</Cards>
