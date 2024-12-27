@@ -1,6 +1,7 @@
-import CMDarkLogo from "@/components/brand/CMDarkLogo";
-import { IconBook2, IconWorld } from "@tabler/icons-react";
-import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
+import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+
+import CMDarkLogo from '@/components/brand/CMDarkLogo';
+import { IconBook2, IconWorld } from '@tabler/icons-react';
 
 /**
  * Shared layout configurations
@@ -10,26 +11,27 @@ import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
  * Docs Layout: app/docs/layout.tsx
  */
 export const baseOptions: BaseLayoutProps = {
-    nav: {
-        title: (
-            <CMDarkLogo style={{
-                height: "2.5rem"
-            }} />
-        ),
-    },
-    links: [
-        {
-            icon: <IconWorld />,
-            text: "Website",
-            url: "https://carrismetropolitana.pt",
-            external: true,
-        },
-        {
-            icon: <IconBook2 />,
-            text: "Blog",
-            url: "https://blog.carrismetropolitana.pt",
-            external: true,
-        }
-    ],
-    githubUrl: "https://github.com/carrismetropolitana",
+	githubUrl: 'https://github.com/carrismetropolitana',
+	links: [
+		{
+			external: true,
+			icon: <IconWorld />,
+			text: 'Website',
+			url: 'https://carrismetropolitana.pt',
+		},
+		{
+			external: true,
+			icon: <IconBook2 />,
+			text: 'Blog',
+			url: 'https://blog.carrismetropolitana.pt',
+		},
+	],
+	nav: {
+		title: (
+			<CMDarkLogo style={{
+				height: '2.5rem',
+			}}
+			/>
+		),
+	},
 };

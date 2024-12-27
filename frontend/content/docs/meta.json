@@ -1,15 +1,15 @@
 {
-    "root": true,
-    "pages": [
-        "---Introdução---",
-        "intro/open-data",
-        "intro/open-source",
-        "intro/contact-us",
-        "---GTFS---",
-        "gtfs/legacy",
-        "gtfs/current",
-        "---API---",
-        "api/index",
-        "...api"
-    ]
+	"pages": [
+		"---Introdução---",
+		"intro/open-data",
+		"intro/open-source",
+		"intro/contact-us",
+		"---GTFS---",
+		"gtfs/legacy",
+		"gtfs/current",
+		"---API---",
+		"api/index",
+		"...api"
+	],
+	"root": true
 }
