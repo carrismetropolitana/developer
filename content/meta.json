@@ -7,11 +7,8 @@
 		"intro/bugs",
 		"intro/contact-us",
 		"---GTFS---",
-		"gtfs/index",
-		"gtfs/legacy",
-		"gtfs/current",
+		"...gtfs",
 		"---API---",
-		"api/index",
 		"...api"
 	],
 	"root": true
