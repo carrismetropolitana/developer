@@ -1,58 +1,81 @@
 ---
-title: Introduction
+title: Introduction to API
 description: Discover how you can use the API to build realtime apps with Carris Metropolitana.
 ---
 
-### Commitment to Open data
+## No special treatment
 
-Carris Metropolitana is deeply commited to open data. Most, if not all, of the code produced internally is published on Github. We welcome comments and PRs.
-Carris Metropolitana also regularly shares metrics about its operation. This includes big numbers (eg. transported passengers) and detailed data about the quality of service for each line.
-Many of these numbers are provided in the API so that they can be consumed in realtime. All our public facing apps (website, native) consume the same endpoints provided to the public,
-as this ensures everyone has access to the same up-to-date information while also simplifying our tech stack.
-
-
-### What this API is and what it is not
-
-**Carris Metropolitana** and **Carris (municipal)** are two separate entities. Carris (municipal) operates exclusively within Lisbon city boundaries, while Carris Metropolitana operates in 15 of the 18 municipalities of the Lisbon metropolitan area.
-This API provides scheduled and realtime data for Carris Metropolitana. If you are looking for a particular bus operator's data please take a look at the following table. For other transit modes [click here](#).
-
-| City / Municipality | Bus Operator                                                            |
-|:-------------------:|:-----------------------------------------------------------------------:|
-| Alcochete           | Carris Metropolitana                                                    |
-| Alcochete           | Carris Metropolitana                                                    |
-| Almada              | Carris Metropolitana                                                    |
-| Amadora             | Carris Metropolitana                                                    |
-| Barreiro            | [TCB](https://www.tcbarreiro.pt/)                                       |
-| Cascais             | [MobiCascais](https://dadosabertos.cascais.pt/dataset/gtfs-mobicascais) |
-| Lisboa              | [Carris (municipal)](https://gateway.carris.pt/apiui)                   |
-| Loures              | Carris Metropolitana                                                    |
-| Mafra               | Carris Metropolitana                                                    |
-| Moita               | Carris Metropolitana                                                    |
-| Montijo             | Carris Metropolitana                                                    |
-| Odivelas            | Carris Metropolitana                                                    |
-| Oeiras              | Carris Metropolitana                                                    |
-| Palmela             | Carris Metropolitana                                                    |
-| Seixal              | Carris Metropolitana                                                    |
-| Sesimbra            | Carris Metropolitana                                                    |
-| Setúbal             | Carris Metropolitana                                                    |
-| Sintra              | Carris Metropolitana                                                    |
-| Vila Franca de Xira | Carris Metropolitana                                                    |
+All routes documented here are the same ones we use in our website, mobile apps, and internal tools.
+We don’t apply any “special treatment” to our APIs—everyone has access to the same information at the same time,
+ensuring fairness and transparency in how the data is shared and utilized.
 
 
-### Versions
+## Versions
 
-The API is versioned. We might need to perform breaking changes to the way endpoints behave in order to support new features; we will always bump the API version to avoid dirupting existing uses.
-Since this is JSON API, for any new property added to any endpoint, we might or might not bump the API version. This is because we do not consider these as breaking changes,
-as these new properties can be safely ignored by API consumers.
+The API is versioned to ensure stability and backward compatibility. If we need to make breaking changes to how endpoints
+behave in order to support new features, we will always increment the API version to avoid disrupting existing usage.
+
+Since this is a JSON API, adding new properties to endpoints is not considered a breaking change, as these properties
+can be safely ignored by API consumers. Therefore, in such cases, the API version may not be bumped.
+This approach allows us to introduce enhancements while minimizing the impact on existing integrations.
 
 
-### Collections
+## Uniform Response Structure
 
-This API is organized into collections (eg. `network` or `metrics`). All JSON endpoints of all collections follow the same basic structure. Available collections are:
+All API responses are designed to follow the JSend specification. This standardized structure ensures consistency across endpoints
+and provides a framework for including additional debugging information when needed.
 
-| Collection                         | Description                                                                                                                                                                  |
-|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [network](/rest-api/network)       | All network-related endpoints. These include stops, lines, routes, patterns, shapes, vehicles, GTFS, etc.                                                                    |
-| [facilities](/rest-api/facilities) | Facilities are places in amL that Carris Metropolitana serves. These include schools, hospitals, etc. Each facility type has its own endpoint.                               |
-| [locations](/rest-api/locations)   | Locations are administrative divisions of amL. Districts, Municipalities, Parishes and Localities. These are used to identify the location of network points and facilities. |
-| [metrics](/rest-api/metrics)       | Realtime metrics from the Carris Metropolitana operation.                                                                                                                    |
+In the case of errors, the JSend format offers a clear and structured way to describe what went wrong and, where possible,
+how the issue might be resolved. This approach simplifies error handling for API consumers and improves the overall developer experience.
+
+```json title="Success Response"
+{
+	status: "success",
+	timestamp: 1721023200,
+	data: [] or {} // The requested data
+}
+```
+
+```json title="Error Response"
+{
+	status: "error",
+	timestamp: 1721023200,
+	message: "Unable to communicate with database"
+}
+```
+
+
+## Typescript
+
+To make working with our API responses easier, we provide an [NPM package](https://www.npmjs.com/package/@carrismetropolitana/api-types)
+that includes TypeScript definitions for all API responses. This package helps ensure type safety and improves development efficiency
+when integrating with our API in JavaScript or TypeScript projects.
+
+We plan to expand this package with additional functionality in the future, and we welcome contributions! If you’d like to help,
+feel free to submit a pull request to the repository.
+
+
+## Collections
+
+The API is organized into collections, such as `network` and `metrics`, each grouping related endpoints.
+All JSON endpoints across collections adhere to the same standardized structure, ensuring consistency and simplicity.
+Below are the available collections:
+
+<Cards>
+    <Card title="network" href="/api/network">
+        Endpoints related to the transit network, including stops, lines, routes, patterns, shapes, vehicles, GTFS data, and more.
+    </Card>
+    <Card title="facilities" href="/api/facilities">
+        Covers facilities within the Lisbon Metropolitan Area served by Carris Metropolitana, such as schools, hospitals, and other key locations.
+		Each facility type has a dedicated endpoint.
+    </Card>
+    <Card title="locations" href="/api/locations">
+        Provides data on administrative divisions within amL, including districts, municipalities, parishes, and localities.
+		These are used to identify the locations of network points and facilities.
+    </Card>
+    <Card title="metrics" href="/api/metrics">
+        Offers real-time metrics from Carris Metropolitana’s operations, providing insights into system performance and activity.
+    </Card>
+</Cards>
+
+##

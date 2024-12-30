@@ -1,0 +1,9 @@
+{
+	"pages": [
+		"index",
+		"network",
+		"facilities",
+		"locations",
+		"metrics"
+	]
+}
