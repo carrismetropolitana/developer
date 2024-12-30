@@ -1,0 +1,20 @@
+/* * */
+/* BODY */
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+
+/* * */
+/* THEME SWITCH */
+
+html.dark .theme-light {
+	display: none;
+}
+
+html.light .theme-dark {
+	display: none;
+}

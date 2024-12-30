@@ -2,8 +2,8 @@
 
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 
-import CMDarkLogo from '@/components/brand/CMDarkLogo';
 import { IconBook2, IconWorld } from '@tabler/icons-react';
+import Image from 'next/image';
 
 /**
  * Shared layout configurations
@@ -30,7 +30,10 @@ export const baseOptions: BaseLayoutProps = {
 	],
 	nav: {
 		title: (
-			<CMDarkLogo style={{ height: '2.5rem' }} />
+			<>
+				<Image alt="Carris Metropolitana" className="theme-light" height={40} src="/brands/cmet-light.svg" width={120} />
+				<Image alt="Carris Metropolitana" className="theme-dark" height={40} src="/brands/cmet-dark.svg" width={120} />
+			</>
 		),
 	},
 };
