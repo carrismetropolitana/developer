@@ -1,8 +1,10 @@
 {
 	"pages": [
-		"---Introdução---",
+		"---Introduction---",
+		"index",
+		"intro/area-covered",
 		"intro/open-data",
-		"intro/open-source",
+		"intro/bugs",
 		"intro/contact-us",
 		"---GTFS---",
 		"gtfs/legacy",

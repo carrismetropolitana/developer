@@ -31,8 +31,8 @@ export const baseOptions: BaseLayoutProps = {
 	nav: {
 		title: (
 			<>
-				<Image alt="Carris Metropolitana" className="theme-light" height={40} src="/brands/cmet-light.svg" width={120} />
-				<Image alt="Carris Metropolitana" className="theme-dark" height={40} src="/brands/cmet-dark.svg" width={120} />
+				<Image alt="Carris Metropolitana" className="theme-light" height={50} src="/brands/cmet-light.svg" width={120} />
+				<Image alt="Carris Metropolitana" className="theme-dark" height={50} src="/brands/cmet-dark.svg" width={120} />
 			</>
 		),
 	},
