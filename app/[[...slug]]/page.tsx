@@ -7,6 +7,25 @@ import { notFound } from 'next/navigation';
 
 /* * */
 
+export async function generateMetadata(props: { params: Promise<{ slug?: string[] }> }) {
+	const params = await props.params;
+	const page = source.getPage(params.slug);
+	if (!page) notFound();
+
+	return {
+		description: page.data.description,
+		title: page.data.title,
+	};
+}
+
+/* * */
+
+export async function generateStaticParams() {
+	return source.generateParams();
+}
+
+/* * */
+
 export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
 	const params = await props.params;
 	const page = source.getPage(params.slug);
@@ -28,23 +47,4 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
 			</DocsBody>
 		</DocsPage>
 	);
-}
-
-/* * */
-
-export async function generateStaticParams() {
-	return source.generateParams();
-}
-
-/* * */
-
-export async function generateMetadata(props: { params: Promise<{ slug?: string[] }> }) {
-	const params = await props.params;
-	const page = source.getPage(params.slug);
-	if (!page) notFound();
-
-	return {
-		description: page.data.description,
-		title: page.data.title,
-	};
 }
