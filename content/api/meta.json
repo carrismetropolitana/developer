@@ -1,9 +1,7 @@
 {
 	"pages": [
 		"index",
-		"network",
-		"facilities",
-		"locations",
-		"metrics"
+		"v2",
+		"v1"
 	]
 }
