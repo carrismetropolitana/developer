@@ -2,7 +2,6 @@
 
 import type { ReactNode } from 'react';
 
-import 'fumadocs-ui/style.css';
 import { RootProvider } from 'fumadocs-ui/provider';
 import { Inter } from 'next/font/google';
 
@@ -19,10 +18,8 @@ const inter = Inter({
 export default function Layout({ children }: { children: ReactNode }) {
 	return (
 		<html className={inter.className} lang="en" suppressHydrationWarning>
-			<body>
-				<RootProvider search={{ options: { type: 'static' } }}>
-					{children}
-				</RootProvider>
+			<body className="flex flex-col min-h-screen">
+				<RootProvider>{children}</RootProvider>
 			</body>
 		</html>
 	);

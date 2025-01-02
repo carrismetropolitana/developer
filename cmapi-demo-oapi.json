@@ -1,0 +1,1345 @@
+{
+	"components": {
+		"schemas": {
+			"ApiResponse": {
+				"properties": {
+					"code": {
+						"format": "int32",
+						"type": "integer"
+					},
+					"message": {
+						"type": "string"
+					},
+					"type": {
+						"type": "string"
+					}
+				},
+				"type": "object",
+				"xml": {
+					"name": "##default"
+				}
+			},
+			"FacilityBoatStation": {
+				"properties": {
+					"district_id": {
+						"example": "15",
+						"type": "string"
+					},
+					"district_name": {
+						"example": "Setúbal",
+						"type": "string"
+					},
+					"id": {
+						"example": "AF_1",
+						"type": "string"
+					},
+					"lat": {
+						"example": 38.52145,
+						"format": "float",
+						"type": "number"
+					},
+					"locality": {
+						"example": "Setúbal",
+						"type": "string"
+					},
+					"lon": {
+						"example": -8.885385,
+						"format": "float",
+						"type": "number"
+					},
+					"municipality_id": {
+						"example": "1512",
+						"type": "string"
+					},
+					"municipality_name": {
+						"example": "Setúbal",
+						"type": "string"
+					},
+					"name": {
+						"example": "Setúbal (Doca do Comércio)",
+						"type": "string"
+					},
+					"parish_id": {
+						"example": "05",
+						"type": "string"
+					},
+					"parish_name": {
+						"example": "Setúbal (São Sebastião)",
+						"type": "string"
+					},
+					"region_id": {
+						"example": "PT170",
+						"type": "string"
+					},
+					"region_name": {
+						"example": "AML",
+						"type": "string"
+					},
+					"stop_ids": {
+						"example": [
+							"160745",
+							"160746"
+						],
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object"
+			},
+			"FacilityLightRailStation": {
+				"properties": {
+					"district_id": {
+						"example": "15",
+						"type": "string"
+					},
+					"district_name": {
+						"example": "Setúbal",
+						"type": "string"
+					},
+					"id": {
+						"example": "MTS_1",
+						"type": "string"
+					},
+					"lat": {
+						"example": 38.637163,
+						"format": "float",
+						"type": "number"
+					},
+					"locality": {
+						"example": "Corroios",
+						"type": "string"
+					},
+					"lon": {
+						"example": -9.151019,
+						"format": "float",
+						"type": "number"
+					},
+					"municipality_id": {
+						"example": "1510",
+						"type": "string"
+					},
+					"municipality_name": {
+						"example": "Seixal",
+						"type": "string"
+					},
+					"name": {
+						"example": "Corroios",
+						"type": "string"
+					},
+					"parish_id": {
+						"example": "05",
+						"type": "string"
+					},
+					"parish_name": {
+						"example": "Corroios",
+						"type": "string"
+					},
+					"region_id": {
+						"example": "PT170",
+						"type": "string"
+					},
+					"region_name": {
+						"example": "AML",
+						"type": "string"
+					},
+					"stop_ids": {
+						"example": [
+							"149996",
+							"140089",
+							"149997",
+							"149999",
+							"149998"
+						],
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object"
+			},
+			"FacilityPip": {
+				"properties": {
+					"district_id": {
+						"example": "11",
+						"type": "string"
+					},
+					"district_name": {
+						"example": "Lisboa",
+						"type": "string"
+					},
+					"id": {
+						"example": "432",
+						"type": "string"
+					},
+					"lat": {
+						"example": 38.79756,
+						"format": "float",
+						"type": "number"
+					},
+					"locality": {
+						"example": "Algueirão - Mem Martins",
+						"type": "string"
+					},
+					"lon": {
+						"example": -9.341218,
+						"format": "float",
+						"type": "number"
+					},
+					"municipality_id": {
+						"example": "1111",
+						"type": "string"
+					},
+					"municipality_name": {
+						"example": "Sintra",
+						"type": "string"
+					},
+					"name": {
+						"example": "Algueirão - Mem Martins (Estação)",
+						"type": "string"
+					},
+					"region_id": {
+						"example": "PT170",
+						"type": "string"
+					},
+					"region_name": {
+						"example": "AML",
+						"type": "string"
+					},
+					"stop_ids": {
+						"example": [
+							"172628",
+							"170095"
+						],
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object"
+			},
+			"FacilitySchool": {
+				"properties": {
+					"address": {
+						"example": "Estrada das Laranjeiras 122",
+						"type": "string"
+					},
+					"district_id": {
+						"example": "11",
+						"type": "string"
+					},
+					"district_name": {
+						"example": "Lisboa",
+						"type": "string"
+					},
+					"email": {
+						"description": "Multiple email addresses are separated by a pipe character (|).",
+						"example": "direcao@aelaranjeiras.edu.gov.pt|servicos@aelaranjeiras.edu.gov.pt",
+						"type": "string"
+					},
+					"grouping": {
+						"example": "Agrupamento de Escolas das Laranjeiras Lisboa",
+						"type": "string"
+					},
+					"id": {
+						"example": "400117",
+						"type": "string"
+					},
+					"lat": {
+						"example": 38.741788,
+						"format": "float",
+						"type": "number"
+					},
+					"locality": {
+						"example": "LISBOA",
+						"type": "string"
+					},
+					"lon": {
+						"example": -9.163122,
+						"format": "float",
+						"type": "number"
+					},
+					"municipality_id": {
+						"example": "1106",
+						"type": "string"
+					},
+					"municipality_name": {
+						"example": "Lisboa",
+						"type": "string"
+					},
+					"name": {
+						"example": "Escola Secundária D. Pedro V",
+						"type": "string"
+					},
+					"nature": {
+						"enum": [
+							"public",
+							"private"
+						],
+						"example": "public",
+						"type": "string"
+					},
+					"parish_id": {
+						"example": "",
+						"type": "string"
+					},
+					"parish_name": {
+						"example": "",
+						"type": "string"
+					},
+					"phone": {
+						"example": "217246060",
+						"type": "string"
+					},
+					"region_id": {
+						"example": "PT170",
+						"type": "string"
+					},
+					"region_name": {
+						"example": "AML",
+						"type": "string"
+					},
+					"stop_ids": {
+						"example": [
+							"060457",
+							"060458",
+							"060453",
+							"060454",
+							"060013",
+							"060456"
+						],
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"url": {
+						"example": "http://ael.edu.pt",
+						"format": "uri",
+						"type": "string"
+					}
+				},
+				"type": "object"
+			},
+			"FacilityStore": {
+				"properties": {
+					"active_counters": {
+						"example": 0,
+						"type": "integer"
+					},
+					"address": {
+						"example": "Avenida José Elias Garcia 71",
+						"type": "string"
+					},
+					"brand_name": {
+						"example": "Espaço navegante®",
+						"type": "string"
+					},
+					"current_ratio": {
+						"example": 0,
+						"type": "integer"
+					},
+					"current_status": {
+						"example": "closed",
+						"type": "string"
+					},
+					"currently_waiting": {
+						"example": 0,
+						"type": "integer"
+					},
+					"district_id": {
+						"example": "11",
+						"type": "string"
+					},
+					"district_name": {
+						"example": "Lisboa",
+						"type": "string"
+					},
+					"email": {
+						"example": "",
+						"type": "string"
+					},
+					"expected_wait_time": {
+						"example": 0,
+						"type": "integer"
+					},
+					"google_place_id": {
+						"example": "ChIJf55o2a3NHg0RNBNFOsMt3gw",
+						"type": "string"
+					},
+					"hours_friday": {
+						"example": [
+							"08:00-19:00"
+						],
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"hours_monday": {
+						"example": [
+							"08:00-19:00"
+						],
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"hours_saturday": {
+						"example": [],
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"hours_special": {
+						"example": "",
+						"type": "string"
+					},
+					"hours_sunday": {
+						"example": [],
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"hours_thursday": {
+						"example": [
+							"08:00-19:00"
+						],
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"hours_tuesday": {
+						"example": [
+							"08:00-19:00"
+						],
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"hours_wednesday": {
+						"example": [
+							"08:00-19:00"
+						],
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"id": {
+						"example": "8400000000000001",
+						"type": "string"
+					},
+					"is_open": {
+						"example": false,
+						"type": "boolean"
+					},
+					"lat": {
+						"example": 38.75631,
+						"format": "float",
+						"type": "number"
+					},
+					"locality": {
+						"example": "Queluz",
+						"type": "string"
+					},
+					"lon": {
+						"example": -9.253493,
+						"format": "float",
+						"type": "number"
+					},
+					"municipality_id": {
+						"example": "1111",
+						"type": "string"
+					},
+					"municipality_name": {
+						"example": "Sintra",
+						"type": "string"
+					},
+					"name": {
+						"example": "Espaço navegante® Queluz",
+						"type": "string"
+					},
+					"parish_id": {
+						"example": "26",
+						"type": "string"
+					},
+					"parish_name": {
+						"example": "União das freguesias de Queluz e Belas",
+						"type": "string"
+					},
+					"phone": {
+						"example": "210410400",
+						"type": "string"
+					},
+					"postal_code": {
+						"example": "2745-155",
+						"type": "string"
+					},
+					"region_id": {
+						"example": "PT170",
+						"type": "string"
+					},
+					"region_name": {
+						"example": "AML",
+						"type": "string"
+					},
+					"short_name": {
+						"example": "Queluz",
+						"type": "string"
+					},
+					"stop_ids": {
+						"example": [
+							"170927",
+							"170928",
+							"172063",
+							"172476",
+							"172495",
+							"172499"
+						],
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"url": {
+						"example": "https://www.carrismetropolitana.pt/encm",
+						"format": "uri",
+						"type": "string"
+					}
+				},
+				"type": "object"
+			},
+			"FacilitySubwayStation": {
+				"properties": {
+					"district_id": {
+						"example": "11",
+						"type": "string"
+					},
+					"district_name": {
+						"example": "Lisboa",
+						"type": "string"
+					},
+					"id": {
+						"example": "AE",
+						"type": "string"
+					},
+					"lat": {
+						"example": 38.7426,
+						"format": "float",
+						"type": "number"
+					},
+					"locality": {
+						"example": "Areeiro",
+						"type": "string"
+					},
+					"lon": {
+						"example": -9.13381,
+						"format": "float",
+						"type": "number"
+					},
+					"municipality_id": {
+						"example": "1106",
+						"type": "string"
+					},
+					"municipality_name": {
+						"example": "Lisboa",
+						"type": "string"
+					},
+					"name": {
+						"example": "Areeiro",
+						"type": "string"
+					},
+					"parish_id": {
+						"example": "55",
+						"type": "string"
+					},
+					"parish_name": {
+						"example": "Areeiro",
+						"type": "string"
+					},
+					"region_id": {
+						"example": "PT170",
+						"type": "string"
+					},
+					"region_name": {
+						"example": "AML",
+						"type": "string"
+					},
+					"stop_ids": {
+						"example": [
+							"061213"
+						],
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object"
+			},
+			"FacilityTrainStation": {
+				"properties": {
+					"district_id": {
+						"example": "15",
+						"type": "string"
+					},
+					"district_name": {
+						"example": "Setúbal",
+						"type": "string"
+					},
+					"id": {
+						"example": "TRAIN_001",
+						"type": "string"
+					},
+					"lat": {
+						"example": 38.518151,
+						"format": "float",
+						"type": "number"
+					},
+					"locality": {
+						"example": "",
+						"type": "string"
+					},
+					"lon": {
+						"example": -8.83784,
+						"format": "float",
+						"type": "number"
+					},
+					"municipality_id": {
+						"example": "1512",
+						"type": "string"
+					},
+					"municipality_name": {
+						"example": "Setúbal",
+						"type": "string"
+					},
+					"name": {
+						"example": "Praias do Sado A",
+						"type": "string"
+					},
+					"parish_id": {
+						"example": "151208",
+						"type": "string"
+					},
+					"parish_name": {
+						"example": "Sado",
+						"type": "string"
+					},
+					"region_id": {
+						"example": "PT170",
+						"type": "string"
+					},
+					"region_name": {
+						"example": "AML",
+						"type": "string"
+					},
+					"stop_ids": {
+						"example": [
+							"160701",
+							"160702"
+						],
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object"
+			}
+		}
+	},
+	"externalDocs": {
+		"description": "Documentation page",
+		"url": "https://docs.carrismetropolitana.pt"
+	},
+	"info": {
+		"contact": {
+			"email": "contacto@carrismetropolitana.pt"
+		},
+		"description": "Carris Metropolitana API OpenAPI!!!!",
+		"license": {
+			"name": "Apache 2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+		},
+		"termsOfService": "http://api.carrismetroopolitana.pt",
+		"title": "Carris Metropolitana API v2",
+		"version": "v2"
+	},
+	"openapi": "3.0.3",
+	"paths": {
+		"/facilities": {
+			"get": {
+				"description": "List all available facility types",
+				"operationId": "listFacilityTypes",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityStore"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "List facility types",
+				"tags": [
+					"facilities"
+				]
+			}
+		},
+		"/facilities/boat_stations": {
+			"get": {
+				"description": "List all boat stations that have connections with our busstops",
+				"operationId": "listFacilityBoatStations",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityBoatStation"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "List boat stations",
+				"tags": [
+					"facilities"
+				]
+			}
+		},
+		"/facilities/light_rail_stations": {
+			"get": {
+				"description": "List all light rail stations that have connections with our busstops",
+				"operationId": "listFacilityLightRailStations",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityLightRailStation"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "List light rail stations",
+				"tags": [
+					"facilities"
+				]
+			}
+		},
+		"/facilities/pips": {
+			"get": {
+				"description": "List realtime ETA panels (PIP = Painéis de Informação ao Público)",
+				"operationId": "listFacilityPips",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "List PIPs",
+				"tags": [
+					"facilities"
+				]
+			}
+		},
+		"/facilities/schools": {
+			"get": {
+				"description": "List all available facility types",
+				"operationId": "listFacilitySchools",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilitySchool"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "List facility types",
+				"tags": [
+					"facilities"
+				]
+			}
+		},
+		"/facilities/stores": {
+			"get": {
+				"description": "List all available facility types",
+				"operationId": "listFacilityStores",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityStore"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "List facility types",
+				"tags": [
+					"facilities"
+				]
+			}
+		},
+		"/facilities/subway_stations": {
+			"get": {
+				"description": "List all subway stations that have connections with our busstops",
+				"operationId": "listFacilitySubwayStations",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilitySubwayStation"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "List subway stations",
+				"tags": [
+					"facilities"
+				]
+			}
+		},
+		"/facilities/train_stations": {
+			"get": {
+				"description": "List all train stations that have connections with our busstops",
+				"operationId": "listFacilityTrainStations",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityTrainStation"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "List train stations",
+				"tags": [
+					"facilities"
+				]
+			}
+		},
+		"/locations/districts": {
+			"get": {
+				"description": "List realtime ETA panels (PIP = Painéis de Informação ao Público)",
+				"operationId": "listLocationDistricts",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "List districts (distritos)",
+				"tags": [
+					"locations"
+				]
+			}
+		},
+		"/locations/localities": {
+			"get": {
+				"description": "List realtime ETA panels (PIP = Painéis de Informação ao Público)",
+				"operationId": "listLocationLocalities",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "List localities (localidades)",
+				"tags": [
+					"locations"
+				]
+			}
+		},
+		"/locations/municipalities": {
+			"get": {
+				"description": "List realtime ETA panels (PIP = Painéis de Informação ao Público)",
+				"operationId": "listLocationMunicipalities",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "List municipalities (municípios)",
+				"tags": [
+					"locations"
+				]
+			}
+		},
+		"/locations/parishes": {
+			"get": {
+				"description": "List realtime ETA panels (PIP = Painéis de Informação ao Público)",
+				"operationId": "listLocationParishes",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "List parishes (concelhos)",
+				"tags": [
+					"locations"
+				]
+			}
+		},
+		"/locations/regions": {
+			"get": {
+				"description": "List realtime ETA panels (PIP = Painéis de Informação ao Público)",
+				"operationId": "listLocationRegions",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "List regions (regiões)",
+				"tags": [
+					"locations"
+				]
+			}
+		},
+		"/metrics/demand/by_day": {
+			"get": {
+				"description": "Get demand data for CM's network grouped by day",
+				"operationId": "getMetricDemandByDay",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "Get demand by day",
+				"tags": [
+					"metrics"
+				]
+			}
+		},
+		"/metrics/demand/by_line": {
+			"get": {
+				"description": "Get demand data for CM's network grouped by line",
+				"operationId": "getMetricDemandByLine",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "Get demand by line",
+				"tags": [
+					"metrics"
+				]
+			}
+		},
+		"/metrics/demand/by_month": {
+			"get": {
+				"description": "Get demand data for CM's network grouped by day",
+				"operationId": "getMetricDemandByMonth",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "Get demand by month",
+				"tags": [
+					"metrics"
+				]
+			}
+		},
+		"/metrics/demand/by_operator/{operatorId}/{day}": {
+			"get": {
+				"description": "Get demand data for CM's network grouped by operator and operational day",
+				"operationId": "getMetricDemandByOperatorAndDay",
+				"parameters": [
+					{
+						"description": "Operator ID. cm for all of CM's operators and 41, 42, 43 and 44 for each area",
+						"in": "path",
+						"name": "operatorId",
+						"required": true,
+						"schema": {
+							"enum": [
+								"cm",
+								"41",
+								"42",
+								"43",
+								"44"
+							],
+							"type": "string"
+						}
+					},
+					{
+						"description": "operational day in the yyyyMMdd format",
+						"in": "path",
+						"name": "day",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "Get demand by operator by day",
+				"tags": [
+					"metrics"
+				]
+			}
+		},
+		"/metrics/demand/by_stop": {
+			"get": {
+				"description": "Get demand data for CM's network grouped by stop",
+				"operationId": "getMetricDemandByStop",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "Get demand by stop",
+				"tags": [
+					"metrics"
+				]
+			}
+		},
+		"/metrics/demand/by_stop/{stopId}": {
+			"get": {
+				"description": "Get demand data for CM's network grouped by a certain stop",
+				"operationId": "getMetricDemandByStopId",
+				"parameters": [
+					{
+						"description": "id of the stop you want to filter metrics by",
+						"in": "path",
+						"name": "stopId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "Get demand by single stop",
+				"tags": [
+					"metrics"
+				]
+			}
+		},
+		"/metrics/service/all": {
+			"get": {
+				"description": "Get all available service metrics",
+				"operationId": "getAllServiceMetrics",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "Get all service metrics",
+				"tags": [
+					"metrics"
+				]
+			}
+		},
+		"/metrics/service/by_line/{lineId}": {
+			"get": {
+				"description": "Get service data for a certain line",
+				"operationId": "getMetricServiceByLineId",
+				"parameters": [
+					{
+						"description": "id of the line you want to group service data by",
+						"in": "path",
+						"name": "lineId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "Get service stats for line",
+				"tags": [
+					"metrics"
+				]
+			}
+		},
+		"/metrics/service/by_line/{lineId}/{operationalDay}": {
+			"get": {
+				"description": "Get demand data for CM's network grouped by operator and operational day",
+				"operationId": "getMetricServicByLineIdAndOperationalDay",
+				"parameters": [
+					{
+						"description": "operational day in the yyyyMMdd format",
+						"in": "path",
+						"name": "lineId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"description": "operational day in the yyyyMMdd format",
+						"in": "path",
+						"name": "operationalDay",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/FacilityPip"
+									},
+									"type": "array"
+								}
+							}
+						},
+						"description": "Successful operation"
+					}
+				},
+				"summary": "Get demand by operator by day",
+				"tags": [
+					"metrics"
+				]
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "https://api.cmet.pt"
+		}
+	],
+	"tags": [
+		{
+			"description": "Facilities descriptions",
+			"externalDocs": {
+				"description": "Find out more",
+				"url": "https://docs.carrismetropolitana.pt/docs/api/v2/facilities"
+			},
+			"name": "facilities"
+		},
+		{
+			"description": "Loc stuff",
+			"externalDocs": {
+				"description": "Find out more about our store",
+				"url": "http://swagger.io"
+			},
+			"name": "locations"
+		},
+		{
+			"description": "Metrics!! <3",
+			"externalDocs": {
+				"description": "Find out more about our store",
+				"url": "http://swagger.io"
+			},
+			"name": "metrics"
+		},
+		{
+			"description": "bus netw",
+			"externalDocs": {
+				"description": "Find out more about our store",
+				"url": "http://swagger.io"
+			},
+			"name": "network"
+		},
+		{
+			"description": "system related warning messages (downtimes, etc)",
+			"externalDocs": {
+				"description": "Find out more about our store",
+				"url": "http://swagger.io"
+			},
+			"name": "status"
+		}
+	]
+}

@@ -1,10 +1,9 @@
-/* * */
-/* BODY */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+.prose {
+  --tw-prose-body: hsl(var(--foreground) / 0.8);
 }
 
 
