@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.contain-content {
+	contain: unset !important;
+	content-visibility: visible !important;
+}
+
 /* * */
 /* THEME SWITCH */
 
