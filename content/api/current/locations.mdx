@@ -19,12 +19,12 @@ Regions are the top-level geographic division in the API. Currently, there are t
 Regions are identified using their NUTS-III code, ensuring consistency with official geographic standards.
 
 <APIPage
-  document="./cmapi-demo-oapi.json"
-  operations={[{ path: '/locations/regions', method: 'get' }]}
+  document="https://api.cmet.pt/openapi"
+  operations={[{ path: '/locations/districts', method: 'get' }]}
   hasHead={false}
 />
 
-<AutoTypeTable path="./node_modules/@carrismetropolitana/api-types/src/api/locations.ts" name="Region" />
+{/* <AutoTypeTable path="./node_modules/@carrismetropolitana/api-types/src/api/locations.ts" name="Region" /> */}
 
 
 ### Districts
@@ -35,7 +35,7 @@ Districts are subdivisions within a region and are identified by their ***DI***C
 https://api.carrismetropolitana.pt/v2/locations/districts
 ```
 
-<AutoTypeTable path="./node_modules/@carrismetropolitana/api-types/src/api/locations.ts" name="District" />
+{/* <AutoTypeTable path="./node_modules/@carrismetropolitana/api-types/src/api/locations.ts" name="District" /> */}
 
 
 ### Municipalities
@@ -46,7 +46,7 @@ Municipalities are subdivisions within a district and are identified by their **
 https://api.carrismetropolitana.pt/v2/locations/municipalities
 ```
 
-<AutoTypeTable path="./node_modules/@carrismetropolitana/api-types/src/api/locations.ts" name="Municipality" />
+{/* <AutoTypeTable path="./node_modules/@carrismetropolitana/api-types/src/api/locations.ts" name="Municipality" /> */}
 
 
 ### Parishes
@@ -67,4 +67,4 @@ Localities are informal places known to local populations. We use this to difere
 https://api.carrismetropolitana.pt/v2/locations/localities
 ```
 
-<AutoTypeTable path="./node_modules/@carrismetropolitana/api-types/src/api/locations.ts" name="Locality" />
+{/* <AutoTypeTable path="./node_modules/@carrismetropolitana/api-types/src/api/locations.ts" name="Locality" /> */}
