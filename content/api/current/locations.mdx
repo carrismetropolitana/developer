@@ -13,10 +13,9 @@ Currently, locations are fetched directly from the GTFS data and are not georefe
 The API provides the following locations in JSON format:
 
 
-### Regions
+### Districts
 
-Regions are the top-level geographic division in the API. Currently, there are three regions available: **amL (Lisbon Metropolitan Area)**, **Alentejo Central** and **Oeste**.
-Regions are identified using their NUTS-III code, ensuring consistency with official geographic standards.
+Districts are the top level division in the API and are identified by their ***DI***COFRE code, a standardized identifier for geographic areas.
 
 <APIPage
   document="https://api.cmet.pt/openapi"
@@ -24,29 +23,16 @@ Regions are identified using their NUTS-III code, ensuring consistency with offi
   hasHead={false}
 />
 
-{/* <AutoTypeTable path="./node_modules/@carrismetropolitana/api-types/src/api/locations.ts" name="Region" /> */}
-
-
-### Districts
-
-Districts are subdivisions within a region and are identified by their ***DI***COFRE code, a standardized identifier for geographic areas. Each district is associated with its parent region.
-
-```
-https://api.carrismetropolitana.pt/v2/locations/districts
-```
-
-{/* <AutoTypeTable path="./node_modules/@carrismetropolitana/api-types/src/api/locations.ts" name="District" /> */}
-
 
 ### Municipalities
 
 Municipalities are subdivisions within a district and are identified by their ***DICO***FRE code. Every geographical data point in the API is associated with at least one municipality, making it the “primary key” for location types.
 
-```
-https://api.carrismetropolitana.pt/v2/locations/municipalities
-```
-
-{/* <AutoTypeTable path="./node_modules/@carrismetropolitana/api-types/src/api/locations.ts" name="Municipality" /> */}
+<APIPage
+  document="https://api.cmet.pt/openapi"
+  operations={[{ path: '/locations/municipalities', method: 'get' }]}
+  hasHead={false}
+/>
 
 
 ### Parishes
@@ -54,17 +40,19 @@ https://api.carrismetropolitana.pt/v2/locations/municipalities
 Parishes, known as “freguesias,” are optional administrative divisions within municipalities. They are identified by their ***DICOFRE*** code. Currently, only a limited number of objects in the API are associated with this location type.
 Expanding the use of parishes to enhance geographic precision is planned for future updates.
 
-```
-https://api.carrismetropolitana.pt/v2/locations/parishes
-```
+<APIPage
+  document="https://api.cmet.pt/openapi"
+  operations={[{ path: '/locations/parishes', method: 'get' }]}
+  hasHead={false}
+/>
 
 
 ### Localities
 
 Localities are informal places known to local populations. We use this to diferentiate the location of similarly named objects. Objects may not have localities.
 
-```
-https://api.carrismetropolitana.pt/v2/locations/localities
-```
-
-{/* <AutoTypeTable path="./node_modules/@carrismetropolitana/api-types/src/api/locations.ts" name="Locality" /> */}
+<APIPage
+  document="https://api.cmet.pt/openapi"
+  operations={[{ path: '/locations/localities', method: 'get' }]}
+  hasHead={false}
+/>
