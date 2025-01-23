@@ -5,7 +5,9 @@ description: Administrative divisions of amL.
 
 ## Data source
 
-Currently, locations are fetched directly from the GTFS data and are not georeferenced. Enhancements to include georeferenced locations are planned for future updates.
+Locations in the API are sourced from the GeoJSON datasets available in our [datasets GitHub repository](https://github.com/carrismetropolitana/datasets/tree/latest/locations).
+The API provides only the properties of the GeoJSON features, excluding the geometries. This approach ensures practical response sizes, as including geometries would significantly increase the data payload.
+For now, if you need access to the geometries, you can download the full GeoJSON files from the repository. We are actively exploring ways to include geometries in the API in a scalable and efficient manner.
 
 
 ## Available locations
